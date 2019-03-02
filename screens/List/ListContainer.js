@@ -1,6 +1,6 @@
 import React from "react";
 import ListPresenter from "./ListPresenter"
-import {YTapi} from "../../api"
+import { videos } from "../../api"
 
 export default class ListContainer extends React.Component{
   state = {
@@ -13,10 +13,10 @@ export default class ListContainer extends React.Component{
 
   async componentDidMount(){
     try{
-      const mormonChannel = await YTapi.mormonChannel();
-      const mormonOrg = await YTapi.mormonOrg();
-      const tabChoir = await YTapi.tabChoir();
-      const mormonNewroom = await YTapi.mormonNewroom();
+      const mormonChannel = await videos.mormonChannel();
+      const mormonOrg = await videos.mormonOrg();
+      const tabChoir = await videos.tabChoir();
+      const mormonNewroom = await videos.mormonNewroom();
       console.log(mormonChannel, mormonOrg, tabChoir, mormonNewroom);
     }catch(error){
       console.log(error)

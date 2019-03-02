@@ -3,7 +3,7 @@ import axios from "axios";
 const api = axios.create({
   baseURL: "https://www.googleapis.com/youtube/v3/search",
   params: {
-    key: "AIzaSyATV4Nxw08GyIPNdqmMvYLCBWvsRaxLs0o",
+    key: "AIzaSyAfyv8J9p3ToKbMe7nVgLOARYAJE9vQcwQ",
     part: "snippet",
     maxResults: "5"
   }

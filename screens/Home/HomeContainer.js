@@ -15,6 +15,9 @@ export default class HomeContainer extends React.Component{
   async componentDidMount(){
     try{
       const mormonChannel = await videos.mormonChannel();
+      const mormonOrg = await videos.mormonOrg();
+      const tabChoir = await videos.tabChoir();
+      const mormonNewroom = await videos.mormonNewroom();
     }catch(error){
       this.setState({error:"Can't get videos."})
       console.log(error);
@@ -24,8 +27,23 @@ export default class HomeContainer extends React.Component{
   }
 
   render(){
-    const { loading, mormonChannel } = this.state;
-    console.log(this.state)
-    return <HomePresenter loading = {loading} />;
+    const { loading, mormonChannel, mormonOrg, tabChoir, mormonNewroom } = this.state;
+    // console.log(this.state)
+    return <HomePresenter loading = {
+      loading
+    }
+    mormonChannel = {
+      mormonChannel
+    }
+    mormonOrg = {
+      mormonOrg
+    }
+    tabChoir = {
+      tabChoir
+    }
+    mormonNewroom = {
+      mormonNewroom
+    }
+    />;
   }
 }
