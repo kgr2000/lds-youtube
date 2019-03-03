@@ -9,11 +9,11 @@ const Container = styled.ScrollView`
   background-color: black;
 `;
 
-const HomePresenter = ({loading, mormonChannel,  mormonOrg,  tabChoir,  mormonNewroom}) => loading ? <Loader /> :  <Container><HomeSlider videos={mormonChannel} /></Container>
-
+const HomePresenter = ({loading, mormonChannel}) => console.log(mormonChannel)
 
   HomePresenter.propTypes = {
-    loading: PropTypes.bool.isRequired
+    loading: PropTypes.bool.isRequired,
+    mormonChannel: PropTypes.array.isRequired
   }
 
   export default HomePresenter;

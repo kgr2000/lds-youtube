@@ -3,7 +3,9 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import Layout from "../constants/Layout";
 
-const Container = styled.View``;
+const Container = styled.View`
+  flex: 1;
+`;
 
 const ThumbnailImage = styled.Image`
   width: ${Layout.width};

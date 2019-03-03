@@ -40,6 +40,7 @@ export default class HomeContainer extends React.Component{
       tabChoir,
       mormonNewroom
     } = this.state;
+    console.log(this.state)
     return <HomePresenter loading = {
       loading
     }
