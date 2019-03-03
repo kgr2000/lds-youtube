@@ -9,26 +9,37 @@ export default class HomeContainer extends React.Component{
     mormonOrg: null,
     tabChoir: null,
     mormonNewroom: null,
-    error: null
+    error: null,
   };
 
   async componentDidMount(){
+    let mormonChannel;
     try{
-      const mormonChannel = await videos.mormonChannel();
-      const mormonOrg = await videos.mormonOrg();
-      const tabChoir = await videos.tabChoir();
-      const mormonNewroom = await videos.mormonNewroom();
+      ({data: {items: mormonChannel}} = await videos.mormonChannel());
+      ({data: {items: mormonOrg}} = await videos.mormonOrg());
+      ({data: {items: tabChoir}} = await videos.tabChoir());
+      ({data: {items: mormonNewroom}} = await videos.mormonNewroom());
     }catch(error){
       this.setState({error:"Can't get videos."})
       console.log(error);
     }finally{
-      this.setState({loading: false})
-    }
-  }
+      this.setState({
+      loading: false,
+      mormonChannel,
+      mormonOrg,
+      tabChoir,
+      mormonNewroom
+    })
+  }}
 
   render(){
-    const { loading, mormonChannel, mormonOrg, tabChoir, mormonNewroom } = this.state;
-    // console.log(this.state)
+    const {
+      loading,
+      mormonChannel,
+      mormonOrg,
+      tabChoir,
+      mormonNewroom
+    } = this.state;
     return <HomePresenter loading = {
       loading
     }

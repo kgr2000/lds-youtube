@@ -1,31 +1,31 @@
 import axios from "axios";
 
-const api = axios.create({
+const YTApi = axios.create({
   baseURL: "https://www.googleapis.com/youtube/v3/search",
   params: {
-    key: "AIzaSyAfyv8J9p3ToKbMe7nVgLOARYAJE9vQcwQ",
+    key: "AIzaSyB-ABAFbOWu_zgvdTA4Z6kLFGyvROvn8R0",
     part: "snippet",
     maxResults: "5"
   }
 })
 
 export const videos = {
-  mormonChannel: () => api.get("", {
+  mormonChannel: () => YTApi.get("", {
     params: {
       channelId: "UCdNjexbIS_NKJC4ZRwKf9ag"
     }
   }),
-  mormonOrg: () => api.get("", {
+  mormonOrg: () => YTApi.get("", {
     params: {
       channelId: "UCImHL0SXFoB5AC33-qe6urQ"
     }
   }),
-  tabChoir: () => api.get("", {
+  tabChoir: () => YTApi.get("", {
     params: {
       channelId: "UCiAkukrUIRCwaLaFx_MJq7Q"
     }
   }),
-  mormonNewroom: () => api.get("", {
+  mormonNewroom: () => YTApi.get("", {
     params: {
       channelId: "UCWCpHqxpBcpnXiIiJOYgRYA"
     }
